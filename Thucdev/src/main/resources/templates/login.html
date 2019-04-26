@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="modal-content">
+    <div class="modal-body login_body_page" style="width: 30%;margin: auto">
+        <span style="color: red">Hướng dẫn login facebook Spring security Thực Nguyễn</span>
+        <br>
+        <br>
+        <form action="#" th:action="@{/auth/login/member}" method="POST" class="form-signin login_body1 mt50" enctype="utf8" role="form">
+            <div class="login_error" th:text="${loginError}"></div>
+            <br>
+            <span th:if="${param.error}" style="color: red">Tài khoản hoặc mật khẩu không đúng</span>
+            <br>
+            <div class="form-group" th:classappend="${param.error} ? 'has-error' : ''">
+
+                <div class="inputbox mt20">
+                    <input id="login-email" name="email" type="email" placeholder="Email"
+                           class="form-control login_input"
+                    />
+                </div>
+                <div class="inputbox mt10 mb15">
+                    <input id="login-password" name="password" type="password"
+                           class="form-control login_input" placeholder="password"
+                     />
+                </div>
+                <div class="checkbox login_checkbox">
+                    <input id="demo-form-inline-checkbox" class="magic-checkbox" name="unique-and-secret" type="checkbox" />
+                    <label for="demo-form-inline-checkbox">remember me</label>
+                </div>
+                <div class="login_btn mt30">
+                    <button class="btn btn-custom3 h50 w100p" type="submit">
+                        <span  th:remove="tag"> login</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <hr class="login_line" />
+        <div style="text-align: center">
+        </div>
+        <div class="login_body1">
+            <div class="social_login">
+                <a href="/auth/facebook" class="btn btn-social btn-facebook h50 w100p"><i><img th:src="@{/img/login_facebook.png}" alt="" /></i>FACEbook</a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+Kết quả quá tuyệt vời.
+
+Như vậy bài hôm nay mình đã hướng dẫn cho các bạn cách đăng nhập Facebook và lưu thông tin  người dùng bằng Spring boot như các hệ thống tiki hay lazada đang sử dụng.
+Mọi thắc mắc xin liên hệ thucnh96.dev@gmail.com.
+
+
